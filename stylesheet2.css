@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 50px;
+  flex-wrap: nowrap;
+  
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
+.judul{
+    padding: 20px;
+    margin: 20px;
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  padding: 0 30px;
+  color: #ffffff;
+}
+.judul div{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+html,body{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background: #84d365;
+}
+::selection{
+  background: rgba(23,162,184,0.3);
+}
+.wrapper{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .box{
+  background: #fff;
+  width: calc(33% - 10px);
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
+.wrapper .box i.quote{
+  font-size: 20px;
+  color: #17a2b8;
+}
+.wrapper .box .content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.box .info .name{
+  font-weight: 600;
+  font-size: 17px;
+}
+.box .info .job{
+  font-size: 16px;
+  font-weight: 500;
+  color: #17a2b8;
+}
+.box .info .stars{
+  margin-top: 2px;
+}
+.box .info .stars i{
+  color: #17a2b8;
+}
+.box .content .image{
+  height: 75px;
+  width: 75px;
+  padding: 3px;
+  background: #17a2b8;
+  border-radius: 50%;
+}
+.content .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.box:hover .content .image img{
+  border-color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .wrapper .box{
+    width: calc(50% - 10px);
+    margin: 10px 0;
+  }
+}
+@media (max-width: 500px) {
+  .wrapper .box{
+    width: 100%;
+  }
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    from {bottom: 200px;}
+    to {bottom: 0px; background-color: rgb(255, 255, 255);}
+}
+
+.image_wrapper{
+    position:relative;overflow:hidden;
+}
+
+.background-image{
+    background-image: url(https://smkwiraharapan.sch.id/wp-content/uploads/2016/07/Slide-home1.jpg); 
+    max-width: 100%; 
+    max-height: max-content; 
+    width: 100%; 
+    
+}
+
+.container {
+    padding-top: 8em;
+    padding-bottom: 4em;
+    padding-left: 1em ;
+    padding-right: 1em;
+    text-align: center;
+    color: #f2f2f2;
+    
+}
+
+.container h1{
+    font-size: 60pt;
+}
+
+.container h2{
+    font-size: 40pt;
+}
+
+.container p{
+    font-size: 15pt;
+    margin-bottom: 20px;
+    color: aquamarine;
+    font-weight: bold;
+    
+}
+
+ul {
+    display:grid;
+    list-style-type:none;
+    grid-column-gap: 60px;
+    margin: 5px;
+    padding: 5px;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+}
+
+.container li {
+    background-color: rgb(29, 61, 88);
+    opacity: 0.8;
+}
+ul li {
+    padding: 2em;
+    color:#E98A8A;
+    
+}
+ul li span {
+    display:block;
+    font-size: 30pt;
+    margin-bottom:1em;
+    color: white;
+    
+}
